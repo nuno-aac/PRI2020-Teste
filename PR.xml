@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PR>
+    <meta>
+        <key>T2021</key>
+        <title>Teste 2021</title>
+        <bdate>18/01/2020</bdate>
+        <edate>18/01/2020</edate>
+        <supervisor>JCR</supervisor>
+    </meta>
+    <workteam>
+        <worker num="A85400">
+            <name>Nuno Cunha</name>
+            <email>a85400@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> Exercicio 1 </p>
+        <p>
+            No primeiro exercicio o ficheiro de json foi tratado para incluir aspas onde estavam em falta assim como virgulas. Foi ainda adicionado o campo _id baseado na referência
+            Depois do dataset ter sido tratado usei o comando
+            <i>mongoimport --db Teste2021 --collection Casamentos --type json --file .\casamentos-fix.json --jsonArray</i>
+            para o importar para uma base de dados mongodb.
+        </p>
+        <p> Exercicio 2 </p>
+        <p>
+            Ao testar a API fornecida no enunciado cheguei as seguintes respostas para cada uma das alineas: 
+        </p>
+        <p>1. 17 processos nivel 3 descendentes da classe 750 (Enumerados no ficheiro entregue)</p>
+        <p>2. 116 processos nivel 4 </p>
+        <p>3. 5 processos nivel 3 descendentes da classe 750.30 </p>
+        <p>4. 6 processos relacionados com a classe 750.30.001 </p>
+        <p> De resto a aplicação em si é composta por duas rotas '/' para aceder a lista inicial e '/:id' para aceder a classes</p>
+    </abstract>
+    <deliverables>
+        <link url="ex1/">Exercicio 1</link>
+        <link url="ex2/">Exercicio 2</link>
+        <link url="ex2/query1.js">Exercicio 2 - Primeira query</link>
+    </deliverables>
+</PR>

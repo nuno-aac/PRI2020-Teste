@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    .w3-card-4
+        header.w3-container.w3-light-green
+            h2.w3-padding-16.w3-center= dados.titulo
+        .w3-container
+            .w3-center
+                h2 Codigo:
+                p= dados.codigo
+                h2 Nivel:
+                p= dados.nivel
+                h2 Descrição:
+                p= dados.descricao   
+        h2.w3-margin Filhos:   
+        if dados.filhos.length > 0
+            .w3-margin
+                table.w3-table-all
+                    tr
+                        th Codigo
+                        th Titulo
+                    each b in dados.filhos
+                        tr
+                            td
+                                span= b.codigo
+                            td
+                                a(href=`${b.codigo}`)= b.titulo
+        else 
+            h5.w3-margin Ainda não há registos
+        if dados.processosRelacionados.length > 0
+            h2.w3-margin Relações:
+            .w3-margin
+                table.w3-table-all
+                    tr
+                        th Codigo
+                        th Titulo
+                        th Relação
+                    each b in dados.processosRelacionados
+                        if b.idRel == "eCruzadoCom" || b.idRel == "eComplementarDe" || b.idRel == "eSuplementoDe" || b.idRel == "eSuplementoPara"
+                            tr
+                                td
+                                    span= b.codigo
+                                td
+                                    a(href=`${b.codigo}`)= b.titulo
+                                td
+                                    span= b.idRel
+        footer.w3-container.w3-light-green.w3-padding-16.w3-center
+            adress Gerado por Nuno Cunha | PRI2020 with 💚 
+                a(href="javascript:history.back()") [ 🔙 ]
+                span   
+                a(href="/") [ 🏠 ]
